@@ -1,0 +1,51 @@
+{
+  "name": "data-processing-tool",
+  "version": "1.0.0",
+  "author": "Data Processing Team",
+  "description": "数据处理工具 - 表格导入、显示和可视化",
+  "main": "out/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "electron-compile": "tsc -p tsconfig.electron.json",
+    "electron": "npm run electron-compile && electron .",
+    "electron-dev": "npm run electron-compile && vite build && electron .",
+    "electron-build": "npm run electron-compile && vite build && electron-builder"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.0",
+    "pkg": "^5.8.1",
+    "typescript": "^5.0.0",
+    "vite": "^4.3.0"
+  },
+  "build": {
+    "appId": "com.dataprocessing.tool",
+    "productName": "数据处理工具",
+    "electronVersion": "27.3.11",
+    "files": [
+      "dist/**/*",
+      "out/main.js",
+      "out/preload.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "certificateFile": null,
+      "certificatePassword": null,
+      "signingHashAlgorithms": null
+    }
+  }
+}
